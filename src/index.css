@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* * {
+    @apply border-border;
+  }
+   */
+  body {
+    @apply bg-pelican-cream text-pelican-dark-green font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-pelican-coral text-white px-6 py-3 rounded-lg font-medium 
+           hover:bg-opacity-90 transition-all duration-300 
+           transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-pelican-dark-green text-white px-6 py-3 rounded-lg font-medium 
+           hover:bg-pelican-green transition-all duration-300
+           transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-pelican-dark-green text-pelican-dark-green px-6 py-3 
+           rounded-lg font-medium hover:bg-pelican-dark-green hover:text-white 
+           transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 
+           hover:shadow-2xl hover:transform hover:scale-105;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-pelican-coral to-pelican-yellow 
+           bg-clip-text text-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d5a4a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a3a2e;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, #f0f0f0 4%, #e8e8e8 25%, #f0f0f0 36%);
+  background-size: 1000px 100%;
+}
